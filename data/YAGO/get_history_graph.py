@@ -36,14 +36,14 @@ def load_quadruples(inPath, fileName, fileName2=None):  # read quadruples from d
     return np.asarray(quadrupleList), np.asarray(times)
 
 
-def get_total_number(inPath, fileName):  # get number of entities and relation; 
+def get_total_number(inPath, fileName):  # get number of entities and relation;
     with open(os.path.join(inPath, fileName), 'r') as fr:
         for line in fr:
             line_split = line.split()
             return int(line_split[0]), int(line_split[1])
 
 
-def get_data_with_t(data, tim):
+def get_data_with_t(data, tim):  # get data at timestamp t;
     triples = [[quad[0], quad[1], quad[2]] for quad in data if quad[3] == tim]
     return np.array(triples)
 
