@@ -6,7 +6,7 @@ import dgl
 import torch
 
 
-def load_quadruples(inPath, fileName, fileName2=None):  # read quadruples from dataset; 
+def load_quadruples(inPath, fileName, fileName2=None):  # read quadruples from dataset;
     with open(os.path.join(inPath, fileName), 'r') as fr:
         quadrupleList = []
         times = set()
@@ -41,36 +41,6 @@ def get_total_number(inPath, fileName):
         for line in fr:
             line_split = line.split()
             return int(line_split[0]), int(line_split[1])
-
-
-def load_quadruples(inPath, fileName, fileName2=None):
-    with open(os.path.join(inPath, fileName), 'r') as fr:
-        quadrupleList = []
-        times = set()
-        for line in fr:
-            line_split = line.split()
-            head = int(line_split[0])
-            tail = int(line_split[2])
-            rel = int(line_split[1])
-            time = int(line_split[3])
-            quadrupleList.append([head, rel, tail, time])
-            times.add(time)
-        # times = list(times)
-        # times.sort()
-    if fileName2 is not None:
-        with open(os.path.join(inPath, fileName2), 'r') as fr:
-            for line in fr:
-                line_split = line.split()
-                head = int(line_split[0])
-                tail = int(line_split[2])
-                rel = int(line_split[1])
-                time = int(line_split[3])
-                quadrupleList.append([head, rel, tail, time])
-                times.add(time)
-    times = list(times)
-    times.sort()
-
-    return np.array(quadrupleList), np.asarray(times)
 
 
 def get_data_with_t(data, tim):
