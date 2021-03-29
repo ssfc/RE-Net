@@ -6,7 +6,7 @@ import dgl
 import torch
 
 
-def load_quadruples(inPath, fileName, fileName2=None):
+def load_quadruples(inPath, fileName, fileName2=None):  # read quadruples from dataset; 
     with open(os.path.join(inPath, fileName), 'r') as fr:
         quadrupleList = []
         times = set()
