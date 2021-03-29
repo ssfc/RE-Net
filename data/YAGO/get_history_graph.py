@@ -36,7 +36,7 @@ def load_quadruples(inPath, fileName, fileName2=None):  # read quadruples from d
     return np.asarray(quadrupleList), np.asarray(times)
 
 
-def get_total_number(inPath, fileName):
+def get_total_number(inPath, fileName):  # get number of entities and relation; 
     with open(os.path.join(inPath, fileName), 'r') as fr:
         for line in fr:
             line_split = line.split()
