@@ -11,7 +11,7 @@ import pickle
 
 def train(args):
     # load data
-    # Step 1, prepare dataset; 
+    # Step 1, prepare dataset;
     num_nodes, num_rels = utils.get_total_number('./data/' + args.dataset, 'stat.txt')
     train_data, train_times_origin = utils.load_quadruples('./data/' + args.dataset, 'train.txt')
 
